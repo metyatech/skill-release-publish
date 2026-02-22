@@ -17,7 +17,8 @@ description: Use when preparing a release, publishing a package, bumping a versi
 - Create and push a release tag; create a GitHub Release based on CHANGELOG.
 - If asked to choose a version, decide it yourself.
 - When bumping a version, create the GitHub Release and publish the package in the same update.
-- For npm publishing, ask the user to run npm publish (do not execute it directly).
+- For npm publishing in metyatech-owned packages, execute `npm publish` directly (an automation token is configured).
+- For other packages, ask the user to run npm publish.
 - Before publishing, run required prep commands (e.g., npm install, npm test, npm pack --dry-run) and only proceed when ready.
 - If authentication fails during publish, ask the user to complete the publish step.
 - Run dependency security checks before release, address critical issues, and report results.
