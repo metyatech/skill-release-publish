@@ -19,13 +19,13 @@ npx skills add metyatech/skill-release-publish
 
 ### Claude Code
 
-```
+```text
 /release-publish
 ```
 
 ### Codex
 
-```
+```text
 $release-publish
 ```
 
