@@ -27,4 +27,3 @@ jobs:
         run: |
           compose-agentsmd --compose
           git diff --exit-code AGENTS.md
-
