@@ -17,9 +17,9 @@ description: Use when preparing a release, publishing a package, bumping a versi
 - Create and push a release tag; create a GitHub Release based on CHANGELOG.
 - If asked to choose a version, decide it yourself.
 - When bumping a version, create the GitHub Release and publish the package in the same update.
-- For npm publishing in metyatech-owned packages, execute `npm publish` directly (an automation token is configured).
-- For other packages, ask the user to run npm publish.
-- Before publishing, run required prep commands (e.g., npm install, npm test, npm pack --dry-run) and only proceed when ready.
+- For publishing in metyatech-owned packages, execute the registry's publish command directly (an automation token is configured).
+- For other packages, ask the user to run the publish command.
+- Before publishing, run required prep commands (e.g., dependency install, tests, dry-run publish) and only proceed when ready.
 - If authentication fails during publish, ask the user to complete the publish step.
 - Run dependency security checks before release, address critical issues, and report results.
 
@@ -29,13 +29,13 @@ After publishing, update any locally installed copy to the newly published relea
 
 - Completion gate: do not report "done" until this verification is completed (or the user explicitly declines).
 - Must be expressed as explicit Acceptance Criteria and reported with outcomes (PASS/FAIL/N/A) + evidence:
-  - AC1 (registry): verify the published version exists in the registry (e.g., `npm view <pkg> version`).
-  - AC2 (fresh install): verify the latest package resolves and runs (e.g., `npx <pkg>@latest --version`).
-  - AC3 (global update, if applicable): if the package is installed globally, update it to the published version and verify (e.g., `npm ls -g <pkg> --depth=0`, `npm i -g <pkg>@latest`, then `<cmd> --version`).
+  - AC1 (registry): verify the published version exists in the registry.
+  - AC2 (fresh install): verify the latest package resolves and runs.
+  - AC3 (global update, if applicable): if the package is installed globally, update it to the published version and verify.
   - If AC3 is not applicable (not installed globally) or cannot be performed, mark it N/A and state the reason explicitly.
-- For npm CLIs:
-  - If installed globally: check `npm ls -g <pkg> --depth=0`, update via `npm i -g <pkg>@latest` (or the published dist-tag), then verify with `<pkg> --version`.
-  - If not installed globally: skip the global update, and verify availability via `npx <pkg>@latest --version` (or the ecosystem-equivalent).
+- For CLI tools:
+  - If installed globally: check the installation, update to the latest version, then verify.
+  - If not installed globally: skip the global update, and verify availability via a temporary execution command.
 
 ## Standard repository topics
 
