@@ -37,6 +37,20 @@ After publishing, update any locally installed copy to the newly published relea
   - If installed globally: check `npm ls -g <pkg> --depth=0`, update via `npm i -g <pkg>@latest` (or the published dist-tag), then verify with `<pkg> --version`.
   - If not installed globally: skip the global update, and verify availability via `npx <pkg>@latest --version` (or the ecosystem-equivalent).
 
+## Standard repository topics
+
+Assign topics from the standard set below. Every repo must have at least one standard topic when applicable; repos that do not match any standard topic use descriptive topics relevant to their domain.
+
+- `agent-skill`: repo contains a SKILL.md (an installable agent skill).
+- `agent-tool`: CLI tool or MCP server used by agents (e.g., task-tracker, agents-mcp, compose-agentsmd).
+- `agent-rule`: rule source or ruleset repository (e.g., agent-rules).
+- `unreal-engine`: Unreal Engine plugin or sample project.
+- `qti`: QTI assessment ecosystem tool or library.
+- `education`: course content, teaching materials, or student-facing platform.
+- `docusaurus`: Docusaurus plugin or extension.
+
+Additional descriptive topics (language, framework, domain keywords) may be added freely alongside standard topics. Review and update the standard topic set when the repository landscape changes materially (new domain clusters emerge or existing ones become obsolete). Verify topics are set as part of the new-repository compliance gate.
+
 ## Published artifact requirements
 
 - Populate package metadata (name, description, repository, issues, homepage, engines).
