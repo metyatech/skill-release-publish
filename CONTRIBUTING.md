@@ -13,7 +13,9 @@ cd skill-release-publish
 
 1. Fork the repository and create a feature branch.
 2. Add or update tests for any changed behavior.
-3. Open a pull request with a clear description of the change.
+3. If rule updates are needed, edit the rules source (don't edit `AGENTS.md` directly).
+4. Run `compose-agentsmd --compose` to refresh instruction files.
+5. Open a pull request with a clear description of the change.
 
 ## Scope
 
